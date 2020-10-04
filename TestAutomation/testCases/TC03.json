@@ -1,0 +1,10 @@
+{
+	"testId": "TC03",
+	"designedBy": "Clae, Josh & Alex",
+	"testDesignedDate": "10/04/2020",
+	"classTested": "type_base",
+	"methodTested": "convert_to_timestamp",
+	"testingInputs": "2017, 02, 30, 17, 34",
+	"Expected Output": "1488476040",
+	"success": "pass"
+}
