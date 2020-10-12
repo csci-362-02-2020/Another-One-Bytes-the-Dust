@@ -1,6 +1,6 @@
 {
 	"testId": "TC04",
-	"driver": "driver.py",
+	"driver": "validEmailTest.php",
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
 	"testingInputs": "",
