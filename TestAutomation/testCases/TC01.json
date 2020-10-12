@@ -1,7 +1,7 @@
 {
 	"testId": "TC01",
-	"classTested": "type_base",
 	"driver": "driver.py",
+	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
 	"testingInputs": "2017, 02, 11, 17, 34",
 	"Expected Output": "1486834460"
