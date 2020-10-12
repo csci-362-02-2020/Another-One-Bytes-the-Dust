@@ -4,5 +4,5 @@
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
 	"testingInputs": "2017, 02, 30, 17, 34",
-	"Expected Output": "1488476040",
+	"Expected Output": "1488476040"
 }
