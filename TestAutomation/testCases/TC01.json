@@ -1,6 +1,6 @@
 {
 	"testId": "TC01",
-	"requirement": "Method produces a correct Unix timestamp",
+	"requirement": "Method returns a correct Unix timestamp",
 	"driver": "validEmailTest.php",
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
