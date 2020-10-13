@@ -1,5 +1,6 @@
 {
 	"testId": "TC05",
+	"requirement": "Method catches misformed input and throws corresponding error",
 	"driver": "validEmailTest.php",
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
