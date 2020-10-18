@@ -14,4 +14,3 @@ result = subprocess.run(
 	check=True
 )
 print(result.stdout)
-
