@@ -1,14 +1,28 @@
 <?php
 //error_reporting(0);
 define('CLI_SCRIPT', true);
-defined('MOODLE_INTERNAL') || die();
 require_once("../project/moodle1/config.php");
-require(__DIR__ . "../project/moodle1/search/classes/document.php");
+require("../project/moodle1/user/lib.php");
+require("../project/moodle1/lib/classes/user.php");
 
-$testClass = new document( 23, 'twenty-three', 'twenty-three' );
+$core = new core_user;
 
-$final = $testClass->get("string");
-echo $final
+$newuser = $core->get_user(2);
+$newuser->id = NULL;
+$newuser->username = 'meepboy';
+$newuser->password = 'Yeahboy123!';
+$newuser->firstname = 'Meep';
+$newuser->lastname = 'Boy';
+$newuser->email = 'meep@gmail.com';
+$newuser->description = "Testing testing";
+
+$newuser_id = user_create_user($newuser);
+
+$fetched_user = $core->get_user($newuser_id);
+
+print_r($fetched_user);
+
+user_delete_user($fetched_user);
 /*
 $newTest = new validEmailTest();
 $newTest->testUsername($argv[1]);
