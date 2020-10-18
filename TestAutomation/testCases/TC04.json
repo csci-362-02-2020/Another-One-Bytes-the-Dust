@@ -1,10 +1,9 @@
 {
 	"testId": "TC04",
-	"designedBy": "Clae, Josh & Alex",
-	"testDesignedDate": "10/04/2020",
+	"requirement": "Method catches misformed input and throws corresponding error",
+	"driver": "validEmailTest.php",
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
 	"testingInputs": "",
-	"Expected Output": "Error: Month Must be at Least One",
-	"success": "pass"
+	"Expected Output": "Error: Month Must be at Least One"
 }

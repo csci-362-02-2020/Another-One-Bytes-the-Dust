@@ -1,10 +1,9 @@
 {
 	"testId": "TC02",
-	"designedBy": "Clae, Josh & Alex",
-	"testDesignedDate": "10/04/2020",
+	"requirement": "Method returns a correct Unix timestamp",
+	"driver": "validEmailTest.php",
 	"classTested": "type_base",
 	"methodTested": "convert_to_timestamp",
 	"testingInputs": "2017, 10, 22",
-	"Expected Output": "1508630400",
-	"success": "pass"
+	"Expected Output": "1508630400"
 }
