@@ -141,6 +141,7 @@ class core_text {
         }
 
         if (preg_match('/^iso-8859-[0-9]+$/', $charset, $matches)) {
+
             return $charset;
         }
 

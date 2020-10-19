@@ -1,10 +1,10 @@
 {
 	"testId": "TC01",
-	"requirement": "Method returns a correct Unix timestamp",
-	"driver": "validEmailTest.php",
-	"classTested": "type_base",
-	"methodTested": "convert_to_timestamp",
-	"testingInputs": "2017, 02, 11, 17, 34",
-	"Expected Output": "1486834460"
+	"requirement": "Method parses and returns charset so all characters are lower-case",
+	"driver": "TC01_05Driver.php",
+	"classTested": "core_text",
+	"methodTested": "parse_charset",
+	"testingInputs": "UTF-8",
+	"expectedOutput": "utf-8"
 }
 

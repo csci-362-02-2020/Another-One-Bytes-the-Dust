@@ -8,6 +8,8 @@ require("../project/moodle1/lib/classes/user.php");
 $core = new core_user;
 
 $newuser = $core->get_user(2);
+print_r($newuser);
+
 $newuser->id = NULL;
 $newuser->username = 'meepboy';
 $newuser->password = 'Yeahboy123!';
@@ -17,29 +19,25 @@ $newuser->email = 'meep@gmail.com';
 $newuser->description = "Testing testing";
 
 $newuser_id = user_create_user($newuser);
+print_r($newuser_id);
 
 $fetched_user = $core->get_user($newuser_id);
 
 print_r($fetched_user);
 
 user_delete_user($fetched_user);
+
+
+
+
+
+
+
+
+
 /*
 $newTest = new validEmailTest();
 $newTest->testUsername($argv[1]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
