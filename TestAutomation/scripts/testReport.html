@@ -1,17 +1,4 @@
-#! /usr/bin/python3.8
 
-import sys
-import subprocess
-import webbrowser
-
-
-result = subprocess.run(
-	['php', '../testCasesExecutables/TC01_05Driver.php'],
-	stdout=subprocess.PIPE,
-	check=True
-)
-print(result.stdout)
-text = '''
 <!DOCTYPE html>
 <title>Test Report</title>
 	<body>
@@ -29,8 +16,3 @@ text = '''
 		Test Successful: <br>
 	</body>
 </html>
-'''
-
-file = open("testReport.html","w")
-file.write(text)
-file.close() 

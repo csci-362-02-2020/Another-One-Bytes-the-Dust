@@ -17,49 +17,49 @@ class driverArrayObject {
 		$this->tcID = $id;
 	}
 	function gettcID(){
-		echo $this->tcID."<br>";
+		echo $this->tcID."$$$";
 	}
 	function setRequirement($id){
 		$this->requirement = $id;
 	}
 	function getRequirement(){
-		echo $this->requirement."<br>";
+		echo $this->requirement."$$$";
 	}
 	function setDriver($id){
 		$this->driver = $id;
 	}
 	function getDriver(){
-		echo $this->driver."<br>";
+		echo $this->driver."$$$";
 	}
 	function setClass($id){
 		$this->class = $id;
 	}
 	function getClass(){
-		echo $this->class."<br>";
+		echo $this->class."$$$";
 	}
 	function setMethod($id){
 		$this->method = $id;
 	}
 	function getMethod(){
-		echo $this->method."<br>";
+		echo $this->method."$$$";
 	}
 	function setTestingInput($id){
 		$this->testingInput = $id;
 	}
 	function getTestingInput(){
-		echo $this->testingInput."<br>";
+		echo $this->testingInput."$$$";
 	}
 	function setExpectedOutput($id){
 		$this->expectedOutput = $id;
 	}
 	function getExpectedOutput(){
-		echo $this->expectedOutput."<br>";
+		echo $this->expectedOutput."$$$";
 	}
 	function setSuccess($id){
 		$this->success = $id;
 	}
 	function getSuccess(){
-		echo $this->success."<br>";
+		echo $this->success."***";
 	}
 
 }
@@ -91,11 +91,7 @@ $finalArr[0]->setExpectedOutput($tc01->expectedOutput);
 
 /////////////////////////////////////////////////////////////
 // TC01
-echo("TC01\n");
-echo("Initial Input: " . $input1 . "\n");
 $parsed_charset = $text->parse_charset($input1);
-print_r("Parsed Charset: " . $parsed_charset . "\n");
-print_r("Expected Output: " . $expected1 . "\n");
 
 if ($parsed_charset == $expected1){
 	$finalArr[0]->setSuccess("PASS");
@@ -103,13 +99,21 @@ if ($parsed_charset == $expected1){
 	$finalArr[0]->setSuccess("FAIL");
 }
 
+$finalArr[0]->gettcID();
+$finalArr[0]->getRequirement();
+$finalArr[0]->getDriver();
+$finalArr[0]->getClass();
+$finalArr[0]->getMethod();
+$finalArr[0]->getTestingInput();
+echo "Actual Output: ".$parsed_charset."$$$";
+$finalArr[0]->getExpectedOutput();
+$finalArr[0]->getSuccess();
 
 
 
 //////////////////////////////////////////////////////////
 // TC02
 
-echo("\nTC02\n");
 $tc02 = file_get_contents("../testCases/TC02.json");
 $tc02 = json_decode($tc02);
 $input2 = $tc02->testingInputs;
@@ -124,10 +128,7 @@ $finalArr[1]->setMethod($tc02->methodTested);
 $finalArr[1]->setTestingInput($tc02->testingInputs);
 $finalArr[1]->setExpectedOutput($tc02->expectedOutput);
 
-echo("Initial Input: " . $input2 . "\n");
 $parsed_charset = $text->parse_charset($input2);
-print_r("Parsed Charset: " . $parsed_charset . "\n");
-print_r("Expected Output: " . $expected2 . "\n");
 
 if ($parsed_charset == $expected2){
 	$finalArr[1]->setSuccess("PASS");
@@ -135,11 +136,20 @@ if ($parsed_charset == $expected2){
 	$finalArr[1]->setSuccess("FAIL");
 }
 
+$finalArr[1]->gettcID();
+$finalArr[1]->getRequirement();
+$finalArr[1]->getDriver();
+$finalArr[1]->getClass();
+$finalArr[1]->getMethod();
+$finalArr[1]->getTestingInput();
+echo "Actual Output: ".$parsed_charset."$$$";
+$finalArr[1]->getExpectedOutput();
+$finalArr[1]->getSuccess();
+
 
 //////////////////////////////////////////////////////////
 // TC03
 
-echo("\nTC03\n");
 $tc03 = file_get_contents("../testCases/TC03.json");
 $tc03 = json_decode($tc03);
 $input3 = $tc03->testingInputs;
@@ -154,10 +164,7 @@ $finalArr[2]->setMethod($tc03->methodTested);
 $finalArr[2]->setTestingInput($tc03->testingInputs);
 $finalArr[2]->setExpectedOutput($tc03->expectedOutput);
 
-echo("Initial Input: " . $input3 . "\n");
 $parsed_charset = $text->parse_charset($input3);
-print_r("Parsed Charset: " . $parsed_charset . "\n");
-print_r("Expected Output: " . $expected3 . "\n");
 
 if ($parsed_charset == $expected3){
 	$finalArr[2]->setSuccess("PASS");
@@ -165,11 +172,19 @@ if ($parsed_charset == $expected3){
 	$finalArr[2]->setSuccess("FAIL");
 }
 
+$finalArr[2]->gettcID();
+$finalArr[2]->getRequirement();
+$finalArr[2]->getDriver();
+$finalArr[2]->getClass();
+$finalArr[2]->getMethod();
+$finalArr[2]->getTestingInput();
+echo "Actual Output: ".$parsed_charset."$$$";
+$finalArr[2]->getExpectedOutput();
+$finalArr[2]->getSuccess();
+
 //////////////////////////////////////////////////////////
 // TC04
 
-
-echo("\nTC04\n");
 $tc04 = file_get_contents("../testCases/TC04.json");
 $tc04 = json_decode($tc04);
 $input4 = $tc04->testingInputs;
@@ -184,10 +199,7 @@ $finalArr[3]->setMethod($tc04->methodTested);
 $finalArr[3]->setTestingInput($tc04->testingInputs);
 $finalArr[3]->setExpectedOutput($tc04->expectedOutput);
 
-echo("Initial Input: " . $input4 . "\n");
 $parsed_charset = $text->parse_charset($input4);
-print_r("Parsed Charset: " . $parsed_charset . "\n");
-print_r("Expected Output: " . $expected4 . "\n");
 
 if ($parsed_charset == $expected4){
 	$finalArr[3]->setSuccess("PASS");
@@ -195,12 +207,20 @@ if ($parsed_charset == $expected4){
 	$finalArr[3]->setSuccess("FAIL");
 }
 
+$finalArr[3]->gettcID();
+$finalArr[3]->getRequirement();
+$finalArr[3]->getDriver();
+$finalArr[3]->getClass();
+$finalArr[3]->getMethod();
+$finalArr[3]->getTestingInput();
+echo "Actual Output: ".$parsed_charset."$$$";
+$finalArr[3]->getExpectedOutput();
+$finalArr[3]->getSuccess();
 
 //////////////////////////////////////////////////////////
 // TC05
 
 
-echo("\nTC05\n");
 $tc05 = file_get_contents("../testCases/TC05.json");
 $tc05 = json_decode($tc05);
 $input5 = $tc05->testingInputs;
@@ -215,10 +235,7 @@ $finalArr[4]->setMethod($tc05->methodTested);
 $finalArr[4]->setTestingInput($tc05->testingInputs);
 $finalArr[4]->setExpectedOutput($tc05->expectedOutput);
 
-echo("Initial Input: " . $input5 . "\n");
 $parsed_charset = $text->parse_charset($input5);
-print_r("Parsed Charset: " . $parsed_charset . "\n");
-print_r("Expected Output: " . $expected5 . "\n");
 
 if ($parsed_charset == $expected5){
 	$finalArr[4]->setSuccess("PASS");
@@ -226,9 +243,15 @@ if ($parsed_charset == $expected5){
 	$finalArr[4]->setSuccess("FAIL");
 }
 
-echo "hello";
+$finalArr[4]->gettcID();
+$finalArr[4]->getRequirement();
+$finalArr[4]->getDriver();
 $finalArr[4]->getClass();
-echo "hello";
+$finalArr[4]->getMethod();
+$finalArr[4]->getTestingInput();
+echo "Actual Output: ".$parsed_charset."$$$";
+$finalArr[4]->getExpectedOutput();
+$finalArr[4]->getSuccess();
 
 
 
