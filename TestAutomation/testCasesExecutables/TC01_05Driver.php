@@ -2,77 +2,19 @@
 //error_reporting(0);
 //TEST STRING TO LOWER & REGULAR EXPRESSIONS
 
-// Create Array Object Class
-class driverArrayObject {
-	var $tcID;
-	var $requirement;
-	var $driver;
-	var $class;
-	var $method;
-	var $testingInput;
-	var $expectedOutput;
-	var $success;
-	
-	function settcID($id){
-		$this->tcID = $id;
-	}
-	function gettcID(){
-		echo $this->tcID."$$$";
-	}
-	function setRequirement($id){
-		$this->requirement = $id;
-	}
-	function getRequirement(){
-		echo $this->requirement."$$$";
-	}
-	function setDriver($id){
-		$this->driver = $id;
-	}
-	function getDriver(){
-		echo $this->driver."$$$";
-	}
-	function setClass($id){
-		$this->class = $id;
-	}
-	function getClass(){
-		echo $this->class."$$$";
-	}
-	function setMethod($id){
-		$this->method = $id;
-	}
-	function getMethod(){
-		echo $this->method."$$$";
-	}
-	function setTestingInput($id){
-		$this->testingInput = $id;
-	}
-	function getTestingInput(){
-		echo $this->testingInput."$$$";
-	}
-	function setExpectedOutput($id){
-		$this->expectedOutput = $id;
-	}
-	function getExpectedOutput(){
-		echo $this->expectedOutput."$$$";
-	}
-	function setSuccess($id){
-		$this->success = $id;
-	}
-	function getSuccess(){
-		echo $this->success."***";
-	}
+define('CLI_SCRIPT', true);
+require("driverObject.php");
+require_once("../project/moodle1/config.php");
+require("../project/moodle1/user/lib.php");
+require("../project/moodle1/lib/classes/text.php");
 
-}
 
-$obj = new driverArrayObject;
+$obj = new driverObject;
 
 // objectArray
 $finalArr = array($obj, $obj, $obj, $obj, $obj);
 
-define('CLI_SCRIPT', true);
-require_once("../project/moodle1/config.php");
-require("../project/moodle1/user/lib.php");
-require("../project/moodle1/lib/classes/text.php");
+
 $tc01 = file_get_contents("../testCases/TC01.json");
 $tc01 = json_decode($tc01);
 $input1 = $tc01->testingInputs;
