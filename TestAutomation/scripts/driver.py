@@ -6,11 +6,10 @@ import webbrowser
 
 print("Number of arguments:" , len(sys.argv), "arguments.")
 print("Argument List:", str(sys.argv))
-arg1 = sys.argv[1]
 
 
 result = subprocess.run(
-	#['php', '../testCasesExecutables/validEmailTest.php', arg1],
+	#['php', '../testCasesExecutables/TC01_05Driver.php'],
 	stdout=subprocess.PIPE,
 	check=True
 )
