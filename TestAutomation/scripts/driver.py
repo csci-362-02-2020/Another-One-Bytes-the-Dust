@@ -16,7 +16,8 @@ result = subprocess.run(
 )
 print(result.stdout)
 text = '''
-<html>
+<!DOCTYPE html>
+<title>Test Report</title>
 	<body>
 		<h1>Test Report</h1>
 		Test ID: <br>
