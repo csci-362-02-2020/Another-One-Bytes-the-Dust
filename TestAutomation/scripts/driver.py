@@ -10,23 +10,16 @@ result = subprocess.run(
 	stdout=subprocess.PIPE,
 	check=True
 )
+#x = result
+#result.stdout
+#y = x.split("***")
 print(result.stdout)
 text = '''
 <!DOCTYPE html>
 <title>Test Report</title>
 	<body>
 		<h1>Test Report</h1>
-		Test ID: <br>
-		Designed by: <br>
-		Design Date: <br>
-		Requirement Tested: <br>
-		Driver Name: <br>
-		Class Tested: <br>
-		Method Tested: <br>
-		Test Input: <br>
-		Expected Output: <br>
-		Actual Output: <br>
-		Test Successful: <br>
+		
 	</body>
 </html>
 '''
