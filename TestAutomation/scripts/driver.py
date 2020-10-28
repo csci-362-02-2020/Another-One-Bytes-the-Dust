@@ -3,6 +3,7 @@
 import sys
 import subprocess
 import webbrowser
+import time
 
 
 result = subprocess.run(
@@ -10,20 +11,23 @@ result = subprocess.run(
 	stdout=subprocess.PIPE,
 	check=True
 )
-#x = result
-#result.stdout
-#y = x.split("***")
-print(result.stdout)
-text = '''
-<!DOCTYPE html>
-<title>Test Report</title>
-	<body>
-		<h1>Test Report</h1>
-		
-	</body>
-</html>
-'''
+x = str(result.stdout)
+y = x.split('***')
+#print(y)
+for case in y:
+	attr = case.split('$$$')
+	yes = attr
+	print(attr)
 
-file = open("testReport.html","w")
-file.write(text)
-file.close() 
+
+text = f'''<!DOCTYPE html> <title>Test Report</title> <body> <h1>Test Report</h1> <br> {yes} </body> </html>'''
+with open("testReport.html","w") as html_file:
+	html_file.write(text)
+
+
+
+
+
+#file = open("testReport.html","w")
+#file.write(text)
+#file.close() 
