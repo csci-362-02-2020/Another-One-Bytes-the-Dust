@@ -11,6 +11,53 @@ result = subprocess.run(
 	check=True
 )
 
+htmlOpening = '''
+<!DOCTYPE html> 
+<head>
+<style>
+.header{
+	text-align: center;
+	font-size: 100px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+.container{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 380px;
+	background-color: #f2f2f2;
+	
+</style>
+<meta charset="utf-8">
+<title>Test Report</title> </head>
+<body>
+<h1 class="header">AOBTD TESTING FRAMEWORK</h1>
+'''
+
+htmlClosing = '''
+</body> 
+</html>'''
+
+innerText = '''
+<div class="container">
+<p>-------------------------------------------<p>
+<p>Test ID: %s</p>
+<p>Requirements: %s</p>
+<p>Driver: %s</p>
+<p>Class Tested: %s</p>
+<p>Method Tested: %s</p>
+<p>Testing Input: %s</p>
+<p>Actual Output: %s</p>
+<p>Expected Output: %s</p>
+<p>Success or Fail: %s</p>
+<p>-------------------------------------------<p>
+</div>
+'''
+
+f = open("testReport.html", "w")
+f.write(htmlOpening)
+
 
 x = str(result.stdout)
 y = x.split('***')
@@ -18,43 +65,13 @@ y = x.split('***')
 outstring = ""
 for case in y:
 	attr = case.split('$$$')
-	for thing in attr
-		outstring += str(thing)
-	print(attr)
-
-text = wrapper % (outstring)
-
-with open("testReport.html","w") as html_file:
-	html_file.write(text)
-
-wrapper = '''<!DOCTYPE html> 
-<head>
-<style>
-.container{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	height: 1000px;
-	background-color: #f2f2f2;
+	if (len(attr) == 9):
+		whole = innerText % (attr[0].replace("b'", ""), attr[1], attr[2], attr[3], attr[4], attr[5], attr[6], attr[7], attr[8])
+		f.write(whole)
 	
-</style>
-<meta charset="utf-8">
-<title>Test Report</title> </head>
-<body> <div class="container"><h1>Test Report</h1><br>
-%s
-	</div>
-	</body> 
-	</html>'''
 	
+	
+f.write(htmlClosing)
+f.close()
+webbrowser.open("testReport.html")
 
-html_file.close()
-open_new_tab(testReport.html)
-
-
-
-
-
-
-#file = open("testReport.html","w")
-#file.write(text)
-#file.close() 
