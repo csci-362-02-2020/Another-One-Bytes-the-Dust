@@ -18,14 +18,14 @@ y = x.split('***')
 outstring = ""
 for case in y:
 	attr = case.split('$$$')
-	for thing in attr
-		outstring += str(thing)
+	for thing in attr:
+		#str += thing 
+		outstring += str(thing) #would love to test this, maybe we don't need a second loop? I don't know.
 	print(attr)
 
-text = wrapper % (outstring)
 
-with open("testReport.html","w") as html_file:
-	html_file.write(text)
+Test = "Test"
+
 
 wrapper = '''<!DOCTYPE html> 
 <head>
@@ -45,8 +45,9 @@ wrapper = '''<!DOCTYPE html>
 	</div>
 	</body> 
 	</html>'''
-	
-
+text = wrapper % (Test) #attempt to get what the print(attr) outputs	
+with open("testReport.html","w") as html_file:
+	html_file.write(text) #just change text to wrapper to output the html file normally
 html_file.close()
 open_new_tab(testReport.html)
 
