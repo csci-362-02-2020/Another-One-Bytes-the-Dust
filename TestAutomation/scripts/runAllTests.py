@@ -41,7 +41,7 @@ htmlClosing = '''
 
 innerText = '''
 <div class="container">
-<p>-------------------------------------------<p>
+<p>-------------------------------------------</p>
 <p>Test ID: %s</p>
 <p>Requirements: %s</p>
 <p>Driver: %s</p>
@@ -51,7 +51,7 @@ innerText = '''
 <p>Actual Output: %s</p>
 <p>Expected Output: %s</p>
 <p>Success or Fail: %s</p>
-<p>-------------------------------------------<p>
+<p>-------------------------------------------</p>
 </div>
 '''
 
@@ -68,8 +68,6 @@ for case in y:
 	if (len(attr) == 9):
 		whole = innerText % (attr[0].replace("b'", ""), attr[1], attr[2], attr[3], attr[4], attr[5], attr[6], attr[7], attr[8])
 		f.write(whole)
-	
-	
 	
 f.write(htmlClosing)
 f.close()

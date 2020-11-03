@@ -54,7 +54,7 @@ for ($i = 0; $i < count($finalArr); $i++){
 	$finalArr[$i]->getClass();
 	$finalArr[$i]->getMethod();
 	$finalArr[$i]->getTestingInput();
-	echo "Actual Output: ".$parsed_charset."$$$";
+	echo $parsed_charset."$$$";
 	$finalArr[$i]->getExpectedOutput();
 	$finalArr[$i]->getSuccess();
 }
