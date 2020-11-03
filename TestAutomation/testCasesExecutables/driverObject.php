@@ -1,7 +1,5 @@
 <?php
-
 // Object class for array of objects in each driver
-
 class driverObject {
 	var $tcID;
 	var $requirement;
