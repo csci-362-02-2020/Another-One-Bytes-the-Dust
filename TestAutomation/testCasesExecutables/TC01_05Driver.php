@@ -34,7 +34,8 @@ for ($i = 0; $i < count($finalArr); $i++){
 	$finalArr[$i]->settcID($testCaseArr[$i]->testId);
 	$finalArr[$i]->setRequirement($testCaseArr[$i]->requirement);
 	$finalArr[$i]->setDriver($testCaseArr[$i]->driver);
-	$finalArr[$i]->setClass($testCaseArr[$i]->classTested);
+	$finalArr[$i]->setClass($t
+<p>Requirements: %s</p>estCaseArr[$i]->classTested);
 	$finalArr[$i]->setMethod($testCaseArr[$i]->methodTested);
 	$finalArr[$i]->setTestingInput($testCaseArr[$i]->testingInputs);
 	$finalArr[$i]->setExpectedOutput($testCaseArr[$i]->expectedOutput);
