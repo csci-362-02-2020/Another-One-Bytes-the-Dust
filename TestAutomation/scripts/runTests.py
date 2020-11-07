@@ -55,7 +55,7 @@ innerText = '''
 </div>
 '''
 
-f = open("testReport.html", "w")
+f = open("../temp/testReport.html", "w+")
 f.write(htmlOpening)
 
 
@@ -71,5 +71,5 @@ for case in y:
 	
 f.write(htmlClosing)
 f.close()
-webbrowser.open("testReport.html")
+webbrowser.open("../temp/testReport.html")
 
