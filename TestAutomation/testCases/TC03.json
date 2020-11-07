@@ -4,6 +4,6 @@
 	"driver": "TC01_05Driver.php",
 	"classTested": "core_text",
 	"methodTested": "parse_charset",
-	"testingInputs": "utl-10",
-	"expectedOutput": "utl-10"
+	"testingInputs": "cb-180",
+	"expectedOutput": "cb-180"
 }

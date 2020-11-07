@@ -11,19 +11,30 @@ require("../project/moodle1/lib/classes/text.php");
 // Create Object of our Selected "Core Text" Class
 $text = new core_text;
 
-// Decode Json Objects from Test Case Folder
-$tc01 = json_decode(file_get_contents("../testCases/TC01.json"));
-$tc02 = json_decode(file_get_contents("../testCases/TC02.json"));
-$tc03 = json_decode(file_get_contents("../testCases/TC03.json"));
-$tc04 = json_decode(file_get_contents("../testCases/TC04.json"));
-$tc05 = json_decode(file_get_contents("../testCases/TC05.json"));
-$obj = new driverObject;
+$testCasesPath = "../testCases";
+$files = scandir($testCasesPath);
 
-// Fill Array with Empty Objects for Test Case Info
-$finalArr = array($obj, $obj, $obj, $obj, $obj);
 
 // Fill Array of Test Case Decode Json
-$testCaseArr = array($tc01, $tc02, $tc03, $tc04, $tc05);
+$testCaseArr = array();
+
+// Fill Array with Empty Objects for Test Case Info
+$finalArr = array();
+
+
+$obj = new driverObject;
+
+// decode json of all test cases in the test case path foler
+for ($i = 2; $i < count($files); $i++){
+	$tcObj = json_decode(file_get_contents($testCasesPath."/".$files[$i]));
+	if($tcObj->driver == "TC01_05Driver.php"){
+		array_push($testCaseArr, $tcObj);
+		array_push($finalArr, $obj);
+	}
+}
+
+
+
 
 for ($i = 0; $i < count($finalArr); $i++){
 
@@ -34,8 +45,7 @@ for ($i = 0; $i < count($finalArr); $i++){
 	$finalArr[$i]->settcID($testCaseArr[$i]->testId);
 	$finalArr[$i]->setRequirement($testCaseArr[$i]->requirement);
 	$finalArr[$i]->setDriver($testCaseArr[$i]->driver);
-	$finalArr[$i]->setClass($t
-<p>Requirements: %s</p>estCaseArr[$i]->classTested);
+	$finalArr[$i]->setClass($testCaseArr[$i]->classTested);
 	$finalArr[$i]->setMethod($testCaseArr[$i]->methodTested);
 	$finalArr[$i]->setTestingInput($testCaseArr[$i]->testingInputs);
 	$finalArr[$i]->setExpectedOutput($testCaseArr[$i]->expectedOutput);
