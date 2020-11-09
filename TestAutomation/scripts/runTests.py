@@ -1,5 +1,6 @@
 #! /usr/bin/python3.8
 
+import importlib.util
 import sys
 import subprocess
 import webbrowser
@@ -8,7 +9,9 @@ import glob
 import json
 import functools
 
-
+spec = importlib.util.spec_from_file_location("compareExpected.py", "../oracles/compareExpected.py")
+compare = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(compare)
 
 #read in the test cases
 
@@ -42,68 +45,72 @@ htmlOpening = '''
 <!DOCTYPE html> 
 <head>
 <style>
+body{
+	background-color: #f2f2f2;
+}
+table, th, td {
+	border: 1px solid black
+}
 .header{
 	text-align: center;
-	font-size: 100px;
+	font-size: 80px;
 	font-family: Arial, Helvetica, sans-serif;
 	
-}
-.container{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	height: 380px;
-	background-color: #f2f2f2;
-	
+}	
 </style>
+
+
 <meta charset="utf-8">
-<title>Test Report</title> </head>
+<title>Test Report</title>
+</head>
 <body>
 <h1 class="header">AOBTD TESTING FRAMEWORK</h1>
+<table style="width:100%"
+<tr>
+	<th>Test ID</th>
+	<th>Requirements</th>
+	<th>Driver</th>
+	<th>Class Tested</th>
+	<th>Method Tested</th>
+	<th>Testing Input</th>
+	<th>Actual Output</th>
+	<th>Expected Output</th>
+	<th>Pass/Fail</th>
+</tr>
 '''
 
 htmlClosing = '''
+</table>
 </body> 
-</html>'''
+</html>
+'''
+
 
 innerText = '''
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: %s</p>
-<p>Requirements: %s</p>
-<p>Driver: %s</p>
-<p>Class Tested: %s</p>
-<p>Method Tested: %s</p>
-<p>Testing Input: %s</p>
-<p>Actual Output: %s</p>
-<p>Expected Output: %s</p>
-<p>Success or Fail: %s</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+	<th>%s</th>
+</tr>
 '''
 
 f = open("../temp/testReport.html", "w+")
 f.write(htmlOpening)
-
-
-x = str(result.stdout)
-y = x.split('***')
-#print(y)
-outstring = ""
-iteratorForActualOutput = 0
+iterator = 0
 
 for case in cases:
 	for driver in driversUsed:
 		if (case['driver'] == driver):
-			successOrFail = ""
-			if (outputs[iteratorForActualOutput] == case['expectedOutput']):
-				successOrFail = "Success"
-			else:
-				successOrFail = "Fail"
-			whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], case['methodTested'],case['testingInputs'], outputs[iteratorForActualOutput], case['expectedOutput'], successOrFail)
+			comparedOutputs = compare.compareExp(outputs[iterator], case['expectedOutput'])
+			whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], 				case['methodTested'],case['testingInputs'], outputs[iterator], case['expectedOutput'], comparedOutputs)
 		f.write(whole)
-	iteratorForActualOutput += 1
-	
+	iterator += 1
 f.write(htmlClosing)
 f.close()
 webbrowser.open("../temp/testReport.html")

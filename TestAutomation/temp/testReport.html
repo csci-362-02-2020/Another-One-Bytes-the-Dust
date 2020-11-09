@@ -2,94 +2,99 @@
 <!DOCTYPE html> 
 <head>
 <style>
+body{
+	background-color: #f2f2f2;
+}
+table, th, td {
+	border: 1px solid black
+}
 .header{
 	text-align: center;
-	font-size: 100px;
+	font-size: 80px;
 	font-family: Arial, Helvetica, sans-serif;
 	
-}
-.container{
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	height: 380px;
-	background-color: #f2f2f2;
-	
+}	
 </style>
+
+
 <meta charset="utf-8">
-<title>Test Report</title> </head>
+<title>Test Report</title>
+</head>
 <body>
 <h1 class="header">AOBTD TESTING FRAMEWORK</h1>
+<table style="width:100%"
+<tr>
+	<th>Test ID</th>
+	<th>Requirements</th>
+	<th>Driver</th>
+	<th>Class Tested</th>
+	<th>Method Tested</th>
+	<th>Testing Input</th>
+	<th>Actual Output</th>
+	<th>Expected Output</th>
+	<th>Pass/Fail</th>
+</tr>
 
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: TC01</p>
-<p>Requirements: Method parses and returns charset so all characters are lower-case</p>
-<p>Driver: TC01_05Driver.php</p>
-<p>Class Tested: core_text</p>
-<p>Method Tested: parse_charset</p>
-<p>Testing Input: UTF-8</p>
-<p>Actual Output: utf-8</p>
-<p>Expected Output: utf-8</p>
-<p>Success or Fail: Success</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>TC01</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>TC01_05Driver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>UTF-8</th>
+	<th>utf-8</th>
+	<th>utf-8</th>
+	<th>Pass</th>
+</tr>
 
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: TC02</p>
-<p>Requirements: Method parses and returns charset so all characters are lower-case</p>
-<p>Driver: TC01_05Driver.php</p>
-<p>Class Tested: core_text</p>
-<p>Method Tested: parse_charset</p>
-<p>Testing Input: IsO-2022-jP</p>
-<p>Actual Output: iso-2022-jp</p>
-<p>Expected Output: iso-2022-jp</p>
-<p>Success or Fail: Success</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>TC02</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>TC01_05Driver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>IsO-2022-jP</th>
+	<th>iso-2022-jp</th>
+	<th>iso-2022-jp</th>
+	<th>Pass</th>
+</tr>
 
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: TC05</p>
-<p>Requirements: Method parses and returns charset so all characters are lower-case</p>
-<p>Driver: TC01_05Driver.php</p>
-<p>Class Tested: core_text</p>
-<p>Method Tested: parse_charset</p>
-<p>Testing Input: shift-jis</p>
-<p>Actual Output: shift_jis</p>
-<p>Expected Output: shift_jis</p>
-<p>Success or Fail: Success</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>TC05</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>TC01_05Driver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>shift-jis</th>
+	<th>shift_jis</th>
+	<th>shift_jis</th>
+	<th>Pass</th>
+</tr>
 
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: TC03</p>
-<p>Requirements: Method parses and returns charset so all characters are lower-case</p>
-<p>Driver: TC01_05Driver.php</p>
-<p>Class Tested: core_text</p>
-<p>Method Tested: parse_charset</p>
-<p>Testing Input: cb-180</p>
-<p>Actual Output: cb-180</p>
-<p>Expected Output: cb-180</p>
-<p>Success or Fail: Success</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>TC03</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>TC01_05Driver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>cb-180</th>
+	<th>cb-180</th>
+	<th>cb-180</th>
+	<th>Pass</th>
+</tr>
 
-<div class="container">
-<p>-------------------------------------------</p>
-<p>Test ID: TC04</p>
-<p>Requirements: Method parses and returns charset so all characters are lower-case</p>
-<p>Driver: TC01_05Driver.php</p>
-<p>Class Tested: core_text</p>
-<p>Method Tested: parse_charset</p>
-<p>Testing Input: utf8</p>
-<p>Actual Output: utf-8</p>
-<p>Expected Output: utf-8</p>
-<p>Success or Fail: Success</p>
-<p>-------------------------------------------</p>
-</div>
+<tr style="">
+	<th>TC04</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>TC01_05Driver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>utf8</th>
+	<th>utf-8</th>
+	<th>utf-8</th>
+	<th>Pass</th>
+</tr>
 
+</table>
 </body> 
 </html>
