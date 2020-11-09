@@ -4,13 +4,40 @@ import sys
 import subprocess
 import webbrowser
 import time
+import glob
+import json
+import functools
 
-result = subprocess.run(
-	['php', '../testCasesExecutables/TC01_05Driver.php'],
+
+
+#read in the test cases
+
+arrayOfCases = (glob.glob("../testCases/*.json"));
+cases = []
+outputs = []
+driversUsed = []
+php = 'php'
+for case in arrayOfCases:
+	f = open(case);
+	data = json.load(f)
+	cases.append(data)
+	testingInput = ""
+	driverName = ""
+	for key, val in data.items():
+		if (key == "driver"):
+			driverName = str(val)
+			if driverName not in driversUsed:
+				driversUsed.append(driverName)
+		if (key == "testingInputs"):
+			testingInput = str(val)
+	driverName = '../testCasesExecutables/' + driverName
+	result = subprocess.run(
+	[php, driverName, testingInput],
 	stdout=subprocess.PIPE,
-	check=True
-)
+	check=True)
+	outputs.append((str(result.stdout).replace("b'", ""))[:-1])
 
+	
 htmlOpening = '''
 <!DOCTYPE html> 
 <head>
@@ -63,11 +90,19 @@ x = str(result.stdout)
 y = x.split('***')
 #print(y)
 outstring = ""
-for case in y:
-	attr = case.split('$$$')
-	if (len(attr) == 9):
-		whole = innerText % (attr[0].replace("b'", ""), attr[1], attr[2], attr[3], attr[4], attr[5], attr[6], attr[7], attr[8])
+iteratorForActualOutput = 0
+
+for case in cases:
+	for driver in driversUsed:
+		if (case['driver'] == driver):
+			successOrFail = ""
+			if (outputs[iteratorForActualOutput] == case['expectedOutput']):
+				successOrFail = "Success"
+			else:
+				successOrFail = "Fail"
+			whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], case['methodTested'],case['testingInputs'], outputs[iteratorForActualOutput], case['expectedOutput'], successOrFail)
 		f.write(whole)
+	iteratorForActualOutput += 1
 	
 f.write(htmlClosing)
 f.close()
