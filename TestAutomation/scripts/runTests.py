@@ -40,6 +40,12 @@ for case in arrayOfCases:
 	check=True)
 	outputs.append((str(result.stdout).replace("b'", ""))[:-1])
 
+
+#add outputs as attribute to cases
+throughOutputs = 0;
+for case in cases:
+	case['actualOutput'] = outputs[throughOutputs]
+	throughOutputs += 1
 	
 htmlOpening = '''
 <!DOCTYPE html> 
@@ -104,19 +110,39 @@ innerText = '''
 f = open("../temp/testReport.html", "w+")
 f.write(htmlOpening)
 
+def sort(casesArr):
+	casesArray = casesArr
+	for i in range(len(casesArray)):
+		min_index = i
+		for j in range(i+1, len(casesArray)):
+			if casesArray[min_index]['testId'][2:] > casesArray[j]['testId'][2:]:
+				min_index = j
+		casesArray[i], casesArray[min_index] = casesArray[min_index], casesArray[i]
+	
+	return casesArray
+
+tempSortedCases = []
+sortedCases = []
+
+for driver in driversUsed:
+	for case in cases:
+		if (case['driver'] == driver):
+			tempSortedCases.append(case)
+	tempSortedCases = sort(tempSortedCases)
+	for i in tempSortedCases:
+		sortedCases.append(i)
+	tempSortedCases = []
+
 testIds = []
 tcCount = 1
 
-for j in cases:
-	iterator = 0
-	for case in cases:
-		if (int(case['testId'][2:]) == tcCount and case['testId'] not in testIds):
-			testIds.append(case['testId']);
-			comparedOutputs = compare.compareExp(outputs[iterator], case['expectedOutput'])
-			whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], 				case['methodTested'],case['testingInputs'], outputs[iterator], case['expectedOutput'], comparedOutputs)
-			f.write(whole)
-			tcCount += 1
-		iterator += 1
+
+for case in sortedCases:
+	comparedOutputs = compare.compareExp(case['actualOutput'], case['expectedOutput'])
+	whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], 				case['methodTested'],case['testingInputs'], case['actualOutput'], case['expectedOutput'], comparedOutputs)
+	f.write(whole)
+
+
 f.write(htmlClosing)
 f.close()
 webbrowser.open("../temp/testReport.html")

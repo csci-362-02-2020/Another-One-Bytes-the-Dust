@@ -1,10 +1,10 @@
 {
-	"testId": "TC06",
+	"testId": "LW04",
 	"requirement": "Method breaks up a string into multiple parts with a symbol separator",
 	"driver": "breakUpLongWordsDriver.php",
 	"classTested": "weblib",
 	"methodTested": "break_up_long_words",
-	"testingInputs": "arnoldmcdoyl@gmail.com*5*@",
-	"expectedOutput": "arnol@dmcdoy@l@gmai@l.com"
+	"testingInputs": "simplestring*100*(",
+	"expectedOutput": "simplestring"
 }
 

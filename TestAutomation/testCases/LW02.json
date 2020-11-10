@@ -1,10 +1,10 @@
 {
-	"testId": "TC08",
+	"testId": "LW02",
 	"requirement": "Method breaks up a string into multiple parts with a symbol separator",
 	"driver": "breakUpLongWordsDriver.php",
 	"classTested": "weblib",
 	"methodTested": "break_up_long_words",
-	"testingInputs": "anotherbytesdust*-1*%",
-	"expectedOutput": "%a%n%o%t%h%e%r%b%y%t%e%s%d%u%s%t"
+	"testingInputs": "helloworldhelloworld*10*$$$",
+	"expectedOutput": "helloworld$$$helloworld"
 }
 
