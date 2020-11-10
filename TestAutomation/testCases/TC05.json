@@ -1,7 +1,7 @@
 {
 	"testId": "TC05",
 	"requirement": "Method parses and returns charset so all characters are lower-case",
-	"driver": "TC01_05Driver.php",
+	"driver": "parseCharsetDriver.php",
 	"classTested": "core_text",
 	"methodTested": "parse_charset",
 	"testingInputs": "shift-jis",

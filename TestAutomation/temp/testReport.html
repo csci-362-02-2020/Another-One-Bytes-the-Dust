@@ -6,7 +6,8 @@ body{
 	background-color: #f2f2f2;
 }
 table, th, td {
-	border: 1px solid black
+	border: 1px solid black;
+	font-size: 9px;
 }
 .header{
 	text-align: center;
@@ -38,7 +39,7 @@ table, th, td {
 <tr style="">
 	<th>TC01</th>
 	<th>Method parses and returns charset so all characters are lower-case</th>
-	<th>TC01_05Driver.php</th>
+	<th>parseCharsetDriver.php</th>
 	<th>core_text</th>
 	<th>parse_charset</th>
 	<th>UTF-8</th>
@@ -50,7 +51,7 @@ table, th, td {
 <tr style="">
 	<th>TC02</th>
 	<th>Method parses and returns charset so all characters are lower-case</th>
-	<th>TC01_05Driver.php</th>
+	<th>parseCharsetDriver.php</th>
 	<th>core_text</th>
 	<th>parse_charset</th>
 	<th>IsO-2022-jP</th>
@@ -60,21 +61,9 @@ table, th, td {
 </tr>
 
 <tr style="">
-	<th>TC05</th>
-	<th>Method parses and returns charset so all characters are lower-case</th>
-	<th>TC01_05Driver.php</th>
-	<th>core_text</th>
-	<th>parse_charset</th>
-	<th>shift-jis</th>
-	<th>shift_jis</th>
-	<th>shift_jis</th>
-	<th>Pass</th>
-</tr>
-
-<tr style="">
 	<th>TC03</th>
 	<th>Method parses and returns charset so all characters are lower-case</th>
-	<th>TC01_05Driver.php</th>
+	<th>parseCharsetDriver.php</th>
 	<th>core_text</th>
 	<th>parse_charset</th>
 	<th>cb-180</th>
@@ -86,12 +75,84 @@ table, th, td {
 <tr style="">
 	<th>TC04</th>
 	<th>Method parses and returns charset so all characters are lower-case</th>
-	<th>TC01_05Driver.php</th>
+	<th>parseCharsetDriver.php</th>
 	<th>core_text</th>
 	<th>parse_charset</th>
 	<th>utf8</th>
 	<th>utf-8</th>
 	<th>utf-8</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC05</th>
+	<th>Method parses and returns charset so all characters are lower-case</th>
+	<th>parseCharsetDriver.php</th>
+	<th>core_text</th>
+	<th>parse_charset</th>
+	<th>shift-jis</th>
+	<th>shift_jis</th>
+	<th>shift_jis</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC06</th>
+	<th>Method breaks up a string into multiple parts with a symbol separator</th>
+	<th>breakUpLongWordsDriver.php</th>
+	<th>weblib</th>
+	<th>break_up_long_words</th>
+	<th>arnoldmcdoyl@gmail.com*5*@</th>
+	<th>arnol@dmcdoy@l@gmai@l.com</th>
+	<th>arnol@dmcdoy@l@gmai@l.com</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC07</th>
+	<th>Method breaks up a string into multiple parts with a symbol separator</th>
+	<th>breakUpLongWordsDriver.php</th>
+	<th>weblib</th>
+	<th>break_up_long_words</th>
+	<th>helloworldhelloworld*10*$$$</th>
+	<th>helloworld$$$helloworld</th>
+	<th>helloworld$$$helloworld</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC08</th>
+	<th>Method breaks up a string into multiple parts with a symbol separator</th>
+	<th>breakUpLongWordsDriver.php</th>
+	<th>weblib</th>
+	<th>break_up_long_words</th>
+	<th>anotherbytesdust*-1*%</th>
+	<th>%a%n%o%t%h%e%r%b%y%t%e%s%d%u%s%t</th>
+	<th>%a%n%o%t%h%e%r%b%y%t%e%s%d%u%s%t</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC09</th>
+	<th>Method breaks up a string into multiple parts with a symbol separator</th>
+	<th>breakUpLongWordsDriver.php</th>
+	<th>weblib</th>
+	<th>break_up_long_words</th>
+	<th>simplestring*100*(</th>
+	<th>simplestring</th>
+	<th>simplestring</th>
+	<th>Pass</th>
+</tr>
+
+<tr style="">
+	<th>TC10</th>
+	<th>Method breaks up a string into multiple parts with a symbol separator</th>
+	<th>breakUpLongWordsDriver.php</th>
+	<th>weblib</th>
+	<th>break_up_long_words</th>
+	<th>ABCDEFGHIJKL*3*@</th>
+	<th>ABC@DEFG@HIJK@L</th>
+	<th>ABC@DEFG@HIJK@L</th>
 	<th>Pass</th>
 </tr>
 

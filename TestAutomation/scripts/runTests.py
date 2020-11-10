@@ -49,7 +49,8 @@ body{
 	background-color: #f2f2f2;
 }
 table, th, td {
-	border: 1px solid black
+	border: 1px solid black;
+	font-size: 9px;
 }
 .header{
 	text-align: center;
@@ -102,15 +103,20 @@ innerText = '''
 
 f = open("../temp/testReport.html", "w+")
 f.write(htmlOpening)
-iterator = 0
 
-for case in cases:
-	for driver in driversUsed:
-		if (case['driver'] == driver):
+testIds = []
+tcCount = 1
+
+for j in cases:
+	iterator = 0
+	for case in cases:
+		if (int(case['testId'][2:]) == tcCount and case['testId'] not in testIds):
+			testIds.append(case['testId']);
 			comparedOutputs = compare.compareExp(outputs[iterator], case['expectedOutput'])
 			whole = innerText % (case['testId'], case['requirement'], case['driver'], case['classTested'], 				case['methodTested'],case['testingInputs'], outputs[iterator], case['expectedOutput'], comparedOutputs)
-		f.write(whole)
-	iterator += 1
+			f.write(whole)
+			tcCount += 1
+		iterator += 1
 f.write(htmlClosing)
 f.close()
 webbrowser.open("../temp/testReport.html")
