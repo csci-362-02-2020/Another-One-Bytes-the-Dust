@@ -1,0 +1,10 @@
+{
+	"testId": "TT02",
+	"requirement": "Removes TRUSTTEXT label from string",
+	"driver": "trustTextDriver.php",
+	"classTested": "weblib",
+	"methodTested": "trusttext_strip",
+	"testingInputs": "one####TRUSTTEXT####less",
+	"expectedOutput": "one####TRUSTTEXT####less"
+}
+

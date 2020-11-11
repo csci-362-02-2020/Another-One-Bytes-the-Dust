@@ -1,9 +1,7 @@
 #! /usr/bin/python3.8
 
 import json
-
 import subprocess
-
 
 
 def addOutputsAsAttr(cases, outputs):
@@ -75,10 +73,11 @@ htmlOpening = '''
 <style>
 body{
 	background-color: #f2f2f2;
+	font-family: "Times New Roman", Times, serif;
 }
 table, th, td {
 	border: 1px solid black;
-	font-size: 9px;
+	font-size:10px;
 }
 .header{
 	text-align: center;
@@ -88,12 +87,11 @@ table, th, td {
 }
 </style>
 
-
-<meta charset="utf-8">
 <title>Test Report</title>
 </head>
 <body>
 <h1 class="header">AOBTD TESTING FRAMEWORK</h1>
+<h2>&#49;</h2>
 <table style="width:100%"
 <tr>
 	<th>Test ID</th>
@@ -117,16 +115,16 @@ htmlClosing = '''
 
 
 innerText = '''
-<tr style="">
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
-	<th>%s</th>
+<tr>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
+	<td>%s</td>
 </tr>
 '''
 

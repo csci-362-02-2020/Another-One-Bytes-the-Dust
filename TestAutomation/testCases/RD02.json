@@ -1,0 +1,10 @@
+{
+	"testId": "RD02",
+	"requirement": "Replaces characters in the string with HTML entity equivs",
+	"driver": "roundDriver.php",
+	"classTested": "evalmath",
+	"methodTested": "round",
+	"testingInputs":"5.234",
+	"expectedOutput": "5"
+}
+

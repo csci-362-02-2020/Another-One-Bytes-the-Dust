@@ -1,0 +1,10 @@
+{
+	"testId": "RD04",
+	"requirement": "Rounds a given value with precision 0",
+	"driver": "roundDriver.php",
+	"classTested": "evalmath",
+	"methodTested": "round",
+	"testingInputs": "743.01",
+	"expectedOutput": "743"
+}
+

@@ -1,5 +1,7 @@
 #! /usr/bin/python3.8
 
+#SCRIPT FOR RUNNING ALL TEST CASES IN THE TEST CASE FOLDER
+
 import importlib.util
 import sys
 import webbrowser
