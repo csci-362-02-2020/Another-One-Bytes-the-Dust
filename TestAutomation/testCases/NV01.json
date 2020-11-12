@@ -1,0 +1,10 @@
+{
+	"testId": "NV01",
+	"requirement": "Normalize a string to be a series of numbers",
+	"driver": "normalizeDriver.php",
+	"classTested": "environment_lib",
+	"methodTested": "normalize_version",
+	"testingInputs": "...135...",
+	"expectedOutput": "135"
+}
+

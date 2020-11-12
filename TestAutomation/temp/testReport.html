@@ -1,0 +1,340 @@
+
+<!DOCTYPE html> 
+<head>
+<style>
+body{
+	background-color: #f2f2f2;
+	font-family: "Times New Roman", Times, serif;
+}
+table, th, td {
+	border: 1px solid black;
+	font-size:10px;
+}
+.header{
+	text-align: center;
+	font-size: 80px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+</style>
+
+<title>Test Report</title>
+</head>
+<body>
+<h1 class="header">AOBTD TESTING FRAMEWORK</h1>
+<table style="width:100%"
+<tr>
+	<th>Test ID</th>
+	<th>Requirements</th>
+	<th>Driver</th>
+	<th>Class Tested</th>
+	<th>Method Tested</th>
+	<th>Testing Input</th>
+	<th>Actual Output</th>
+	<th>Expected Output</th>
+	<th>Pass/Fail</th>
+</tr>
+
+<tr>
+	<td>NV01</td>
+	<td>Normalize a string to be a series of numbers</td>
+	<td>normalizeDriver.php</td>
+	<td>environment_lib</td>
+	<td>normalize_version</td>
+	<td>...135...</td>
+	<td>135</td>
+	<td>135</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>NV02</td>
+	<td>Normalize a string to be a series of numbers</td>
+	<td>normalizeDriver.php</td>
+	<td>environment_lib</td>
+	<td>normalize_version</td>
+	<td>1.2.3.4...</td>
+	<td>1.2.3.4</td>
+	<td>1.2.3.4</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>NV03</td>
+	<td>Normalize a string to be a series of numbers</td>
+	<td>normalizeDriver.php</td>
+	<td>environment_lib</td>
+	<td>normalize_version</td>
+	<td>1..2.3</td>
+	<td>1.2.3</td>
+	<td>1.2.3</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>NV04</td>
+	<td>Normalize a string to be a series of numbers</td>
+	<td>normalizeDriver.php</td>
+	<td>environment_lib</td>
+	<td>normalize_version</td>
+	<td>..hello000world...</td>
+	<td>000</td>
+	<td>000</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>NV05</td>
+	<td>Normalize a string to be a series of numbers</td>
+	<td>normalizeDriver.php</td>
+	<td>environment_lib</td>
+	<td>normalize_version</td>
+	<td>hello..2</td>
+	<td>2</td>
+	<td>2</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>PC01</td>
+	<td>Method parses and returns charset so all characters are lower-case</td>
+	<td>parseCharsetDriver.php</td>
+	<td>core_text</td>
+	<td>parse_charset</td>
+	<td>UTF-8</td>
+	<td>utf-8</td>
+	<td>utf-8</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>PC02</td>
+	<td>Method parses and returns charset so all characters are lower-case</td>
+	<td>parseCharsetDriver.php</td>
+	<td>core_text</td>
+	<td>parse_charset</td>
+	<td>IsO-2022-jP</td>
+	<td>iso-2022-jp</td>
+	<td>iso-2022-jp</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>PC03</td>
+	<td>Method parses and returns charset so all characters are lower-case</td>
+	<td>parseCharsetDriver.php</td>
+	<td>core_text</td>
+	<td>parse_charset</td>
+	<td>cb-180</td>
+	<td>cb-180</td>
+	<td>cb-180</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>PC04</td>
+	<td>Method parses and returns charset so all characters are lower-case</td>
+	<td>parseCharsetDriver.php</td>
+	<td>core_text</td>
+	<td>parse_charset</td>
+	<td>utf8</td>
+	<td>utf-8</td>
+	<td>utf-8</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>PC05</td>
+	<td>Method parses and returns charset so all characters are lower-case</td>
+	<td>parseCharsetDriver.php</td>
+	<td>core_text</td>
+	<td>parse_charset</td>
+	<td>shift-jis</td>
+	<td>shift_jis</td>
+	<td>shift_jis</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>RD01</td>
+	<td>Rounds a given value with precision 0</td>
+	<td>roundDriver.php</td>
+	<td>evalmath</td>
+	<td>round</td>
+	<td>1.2</td>
+	<td>1</td>
+	<td>1</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>RD02</td>
+	<td>Replaces characters in the string with HTML entity equivs</td>
+	<td>roundDriver.php</td>
+	<td>evalmath</td>
+	<td>round</td>
+	<td>5.234</td>
+	<td>5</td>
+	<td>5</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>RD03</td>
+	<td>Rounds a given value with precision 0</td>
+	<td>roundDriver.php</td>
+	<td>evalmath</td>
+	<td>round</td>
+	<td>-45.0</td>
+	<td>-45</td>
+	<td>-45</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>RD04</td>
+	<td>Rounds a given value with precision 0</td>
+	<td>roundDriver.php</td>
+	<td>evalmath</td>
+	<td>round</td>
+	<td>743.01</td>
+	<td>743</td>
+	<td>743</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>RD05</td>
+	<td>Rounds a given value with precision 0</td>
+	<td>roundDriver.php</td>
+	<td>evalmath</td>
+	<td>round</td>
+	<td>.001</td>
+	<td>0</td>
+	<td>0</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>LW01</td>
+	<td>Method breaks up a string into multiple parts with a symbol separator</td>
+	<td>breakUpLongWordsDriver.php</td>
+	<td>weblib</td>
+	<td>break_up_long_words</td>
+	<td>arnoldmcdoyl@gmail.com*5*@</td>
+	<td>arnol@dmcdoy@l@gmai@l.com</td>
+	<td>arnol@dmcdoy@l@gmai@l.com</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>LW02</td>
+	<td>Method breaks up a string into multiple parts with a symbol separator</td>
+	<td>breakUpLongWordsDriver.php</td>
+	<td>weblib</td>
+	<td>break_up_long_words</td>
+	<td>helloworldhelloworld*10*$$$</td>
+	<td>helloworld$$$helloworld</td>
+	<td>helloworld$$$helloworld</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>LW03</td>
+	<td>Method breaks up a string into multiple parts with a symbol separator</td>
+	<td>breakUpLongWordsDriver.php</td>
+	<td>weblib</td>
+	<td>break_up_long_words</td>
+	<td>anotherbytesdust*-1*%</td>
+	<td>%a%n%o%t%h%e%r%b%y%t%e%s%d%u%s%t</td>
+	<td>%a%n%o%t%h%e%r%b%y%t%e%s%d%u%s%t</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>LW04</td>
+	<td>Method breaks up a string into multiple parts with a symbol separator</td>
+	<td>breakUpLongWordsDriver.php</td>
+	<td>weblib</td>
+	<td>break_up_long_words</td>
+	<td>simplestring*100*(</td>
+	<td>simplestring</td>
+	<td>simplestring</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>LW05</td>
+	<td>Method breaks up a string into multiple parts with a symbol separator</td>
+	<td>breakUpLongWordsDriver.php</td>
+	<td>weblib</td>
+	<td>break_up_long_words</td>
+	<td>ABCDEFGHIJKL*3*@</td>
+	<td>ABC@DEFG@HIJK@L</td>
+	<td>ABC@DEFG@HIJK@L</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT01</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>hello#####TRUSTTEXT#####world</td>
+	<td>helloworld</td>
+	<td>helloworld</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT02</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>#####TRUSTTEXT#####hey#####TRUSTTEXT#####</td>
+	<td>hey</td>
+	<td>hey</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT02</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT03</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>#####TRUSTEXT#####</td>
+	<td>#####TRUSTEXT#####</td>
+	<td>#####TRUSTEXT#####</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT05</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>Pass</td>
+</tr>
+
+</table>
+</body> 
+</html>

@@ -213,6 +213,7 @@ class core_collator {
             if ($original) {
                 self::restore_array($arr, $original);
             }
+            print_r($arr);
             return $result;
         }
 
