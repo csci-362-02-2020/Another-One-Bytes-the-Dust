@@ -1007,6 +1007,9 @@ function break_up_long_words($string, $maxsize=20, $cutchar=' ') {
 
     for ($i=0; $i<$length; $i++) {
         $char = core_text::substr($string, $i, 1);
+        if ($char == 'A'){
+            continue;
+        }
         if ($char == ' ' or $char == "\t" or $char == "\n" or $char == "\r" or $char == "<" or $char == ">") {
             $wordlength = 0;
         } else {
@@ -1627,6 +1630,8 @@ function trusttext_strip($text) {
     }
     while (true) { // Removing nested TRUSTTEXT.
         $orig = $text;
+        /// [THIS IS AN INJECTION WILL NOW HANDLE TRUSTEXT AS VALID TRUSTTEXT]
+        $text = str_replace('#####TRUSTEXT#####', '#####TRUSTTEXT#####', $text);
         $text = str_replace('#####TRUSTTEXT#####', '', $text);
         if (strcmp($orig, $text) === 0) {
             return $text;

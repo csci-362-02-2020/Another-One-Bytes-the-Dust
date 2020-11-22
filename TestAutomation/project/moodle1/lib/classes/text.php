@@ -133,7 +133,9 @@ class core_text {
         // shortcuts so that we do not have to load typo3 on every page
 
         if ($charset === 'utf8' or $charset === 'utf-8') {
-            return 'utf-8';
+            //return 'utf-8';
+            /// [THIS IS AN INJECTION WHERE SET THE RETURN IF UTF8 to UTF7]
+            return 'utf-7';
         }
 
         if (preg_match('/^(cp|win|windows)-?(12[0-9]{2})$/', $charset, $matches)) {
