@@ -4,7 +4,6 @@
 
 define('CLI_SCRIPT', true);
 require_once("../project/moodle1/config.php");
-require("../project/moodle1/user/lib.php");
 require("../project/moodle1/lib/evalmath/evalmath.class.php");
 
 if (!$argv[1]) {

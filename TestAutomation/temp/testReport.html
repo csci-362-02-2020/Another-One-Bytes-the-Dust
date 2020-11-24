@@ -66,9 +66,9 @@ table, th, td {
 	<td>environment_lib</td>
 	<td>normalize_version</td>
 	<td>1..2.3</td>
+	<td>1..2.3</td>
 	<td>1.2.3</td>
-	<td>1.2.3</td>
-	<td>Pass</td>
+	<td>Fail</td>
 </tr>
 
 <tr>
@@ -162,9 +162,9 @@ table, th, td {
 	<td>core_text</td>
 	<td>parse_charset</td>
 	<td>UTF-8</td>
+	<td>utf-7</td>
 	<td>utf-8</td>
-	<td>utf-8</td>
-	<td>Pass</td>
+	<td>Fail</td>
 </tr>
 
 <tr>
@@ -198,9 +198,9 @@ table, th, td {
 	<td>core_text</td>
 	<td>parse_charset</td>
 	<td>utf8</td>
+	<td>utf-7</td>
 	<td>utf-8</td>
-	<td>utf-8</td>
-	<td>Pass</td>
+	<td>Fail</td>
 </tr>
 
 <tr>
@@ -246,9 +246,9 @@ table, th, td {
 	<td>evalmath</td>
 	<td>round</td>
 	<td>-45.0</td>
+	<td>You have entered a number less than 0..</td>
 	<td>-45</td>
-	<td>-45</td>
-	<td>Pass</td>
+	<td>Fail</td>
 </tr>
 
 <tr>
@@ -282,9 +282,9 @@ table, th, td {
 	<td>weblib</td>
 	<td>break_up_long_words</td>
 	<td>arnoldmcdoyl@gmail.com*5*@</td>
+	<td>arnol@dmcdoy@l+AEA-gmai@l.com</td>
 	<td>arnol@dmcdoy@l@gmai@l.com</td>
-	<td>arnol@dmcdoy@l@gmai@l.com</td>
-	<td>Pass</td>
+	<td>Fail</td>
 </tr>
 
 <tr>
@@ -330,11 +330,74 @@ table, th, td {
 	<td>weblib</td>
 	<td>break_up_long_words</td>
 	<td>ABCDEFGHIJKL*3*@</td>
+	<td>BCD@EFGH@IJKL</td>
 	<td>ABC@DEFG@HIJK@L</td>
-	<td>ABC@DEFG@HIJK@L</td>
+	<td>Fail</td>
+</tr>
+
+<<<<<<< HEAD
+=======
+<tr>
+	<td>TT01</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>hello#####TRUSTTEXT#####world</td>
+	<td>helloworld</td>
+	<td>helloworld</td>
 	<td>Pass</td>
 </tr>
 
+<tr>
+	<td>TT02</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>#####TRUSTTEXT#####hey#####TRUSTTEXT#####</td>
+	<td>hey</td>
+	<td>hey</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT02</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>one####TRUSTTEXT####less</td>
+	<td>Pass</td>
+</tr>
+
+<tr>
+	<td>TT03</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>#####TRUSTEXT#####</td>
+	<td></td>
+	<td>#####TRUSTEXT#####</td>
+	<td>Fail</td>
+</tr>
+
+<tr>
+	<td>TT05</td>
+	<td>Removes TRUSTTEXT label from string</td>
+	<td>trustTextDriver.php</td>
+	<td>weblib</td>
+	<td>trusttext_strip</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>###one##TRUSTTEXT#####</td>
+	<td>Pass</td>
+</tr>
+
+>>>>>>> 998a5320d8e1ef81c4bb754c049c0c6d343bd100
 </table>
 </body> 
 </html>

@@ -4,7 +4,6 @@
 
 define('CLI_SCRIPT', true);
 require_once("../project/moodle1/config.php");
-require("../project/moodle1/user/lib.php");
 include("../project/moodle1/user/lib/weblib.php");
 
 if (!$argv[1]) {
