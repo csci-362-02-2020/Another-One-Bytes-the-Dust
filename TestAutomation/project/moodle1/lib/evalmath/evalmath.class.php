@@ -597,11 +597,13 @@ class EvalMathFuncs {
     static function round($val, $precision = 0) {
         // return round($val, $precision);
         /// [THIS IS AN INJECTION WHERE IF VAL IS LESS THAN 0, ERROR MESSAGE RETURNED]
-        if ($val > 0){
-            return round($val, $precision);
-        } else {
-            return "You have entered a number less than 0..";
-        }
+        //if ($val > 0){
+            //return round($val, $precision);
+        //} else {
+            //return "You have entered a number less than 0..";
+        //}
+        // end of injection
+        return round($val, $precision);
     }
 
     static function sum() {

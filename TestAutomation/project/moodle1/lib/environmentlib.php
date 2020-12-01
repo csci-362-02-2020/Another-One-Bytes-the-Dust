@@ -249,7 +249,7 @@ function normalize_version($version) {
     $version = preg_replace('/[^\.\d]/', '.', $version);
 /// Combine multiple dots in one
 /// [THIS IS AN INJECTION WHERE WE REMOVE THE LINE THAT REMOVES MULTIPLE DOTS]
-    //$version = preg_replace('/(\.{2,})/', '.', $version);
+    $version = preg_replace('/(\.{2,})/', '.', $version);
 /// Trim possible leading and trailing dots
     $version = trim($version, '.');
 
